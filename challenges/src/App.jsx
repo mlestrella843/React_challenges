@@ -1,30 +1,13 @@
-import { useState } from 'react'
-import './App.css'
+import react, {useState} from 'react';
 
-function App() {
-  const [gameRunning, setGameRunning] = useState(false);
-  const [buttonText, setButtonText] = useState("to See");
+export default function app() {
+    const [count, setCount] = useState(0);  // Initialize count as 0 with useState hook
 
-  const handleClick = () => {
-    if(gameRunning){
-      setGameRunning(false);
-      setButtonText("Pause");
-    }
-    else{
-      setGameRunning(true);
-      setButtonText("Play");
-    }
-  }
-
-  return (
-    <>
-     <button
-      className='bg-blue-600 text-white rounded text-md px-4 py-2'
-      onClick={handleClick}
-     >
-      {buttonText}
-     </button>
-    </>
-  )
+    return(
+        <div>
+            <h1>Hello World!</h1>
+            <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+            <p>This is a simple React component.</p>     
+        </div>
+    )
 }
-export default App
